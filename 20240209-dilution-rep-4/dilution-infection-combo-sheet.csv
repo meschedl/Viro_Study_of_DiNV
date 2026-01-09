@@ -1,0 +1,57 @@
+vial,species,combo,sex,mated status,days_emerged,day_infected,age_infected,tube,treatment,volume,time,time on CO2,original_N_number,adjusted_N_number,day 1 11/4,day 2 11/5,day 3 11/6,day 4 11/7,day 5 11/8,day 6 11/9,day 7 11/10,day 8 11/11,day 9 11/12,day 10 11/13,day 11 11/14,day 12 11/15,day 13 11/16,day 14 11/17
+1,D. innubila,male-CCM,male,mated,20231025-20231026,20231103,8-10 days,CCM,CCM,27.6nl,2:22,10 min,10,8,8,8,8,7,7,7,7,7,7,7,7,7,7,7
+2,D. innubila,female-CCM,female,mated,20231025-20231026,20231103,8-10 days,CCM,CCM,27.6nl,2:28, 6 min,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10
+3,D. innubila,male-0.01,male,mated,20231025-20231026,20231103,8-10 days,9,0.01 FFU,27.6nl,2:37,5 min,10,10,10,10,10,10,10,9,9,8,8,8,8,8,7,7
+4,D. innubila,female-0.01,female,mated,20231025-20231026,20231103,8-10 days,9,0.01 FFU,27.6nl,2:43,5 min,10,10,10,10,10,10,10,10,10,6,6,5,5,5,5,5
+5,D. innubila,male-0.1,male,mated,20231025-20231026,20231103,8-10 days,8,0.1 FFU,27.6nl,2:53,6 min,10,10,10,10,10,10,10,9,8,7,3,2,0,0,0,0
+6,D. innubila,female-0.1,female,mated,20231025-20231026,20231103,8-10 days,8,0.1 FFU,27.6nl,2:59,5 min,10,10,10,10,10,9,9,9,8,0,0,0,0,0,0,0
+7,D. innubila,male-1,male,mated,20231025-20231026,20231103,8-10 days,7,1 FFU,27.6nl,3:09,5 min,10,10,10,10,10,10,10,9,9,7,5,4,1,0,0,0
+8,D. innubila,female-1,female,mated,20231025-20231026,20231103,8-10 days,7,1 FFU,27.6nl,3:13,6 min,10,10,10,10,10,10,10,10,7,2,0,0,0,0,0,0
+9,D. innubila,male-3,male,mated,20231025-20231026,20231103,8-10 days,6,3 FFU,27.6nl,3:28,6 min,10,10,10,10,10,10,10,9,6,5,2,2,0,0,0,0
+10,D. innubila,female-3,female,mated,20231025-20231026,20231103,8-10 days,6,3 FFU,27.6nl,3:34,5 min,10,10,10,10,10,10,10,8,4,0,0,0,0,0,0,0
+11,D. innubila,male-6,male,mated,20231025-20231026,20231103,8-10 days,5,6 FFU,27.6nl,3:43,6 min,10,10,10,10,10,10,9,7,6,3,0,0,0,0,0,0
+12,D. innubila,female-6,female,mated,20231025-20231026,20231103,8-10 days,5,6 FFU,27.6nl,3:49,6 min,10,10,10,10,10,10,10,8,6,1,0,0,0,0,0,0
+13,D. innubila,male-undil,male,mated,20231025-20231026,20231103,8-10 days,1,undiluted DiNV,27.6nl,4:00,6 min,10,10,10,10,10,10,10,7,7,3,1,0,0,0,0,0
+14,D. innubila,female-undil,female,mated,20231025-20231026,20231103,8-10 days,1,undiluted DiNV,27.6nl,4:06,6 min,10,10,10,10,10,10,10,7,2,1,0,0,0,0,0,0
+1,D. innubila,male-CCM,male,yes,11/23-11/24,20231201,8-9 days,CCM,CCM,27.6nl,2:40,7 min,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10
+2,D. innubila,female-CCM,female,yes,11/23-11/24,20231201,8-9 days,CCM,CCM,27.6nl,2:54,6 min,9,9,9,9,8,8,8,8,8,8,8,8,8,8,7,7
+3,D. innubila,male-CCM,male,yes,11/23-11/24,20231201,8-9 days,CCM,CCM,27.6nl,3:00,4 min,10,8,8,8,8,7,5,5,5,5,5,5,5,5,5,5
+4,D. innubila,female-CCM,female,yes,11/23-11/24,20231201,8-9 days,CCM,CCM,27.6nl,3:04,6 min,10,10,10,10,9,8,8,8,7,7,7,7,6,6,6,6
+7,D. innubila,male-0.01,male,yes,11/23-11/24,20231201,8-9 days,5,0.01 FFU,27.6nl,3:26,8 min,9,8,8,8,8,8,8,8,8,7,7,5,5,5,5,5
+8,D. innubila,female-0.01,female,yes,11/23-11/24,20231201,8-9 days,5,0.01 FFU,27.6nl,3:34, 9 min,10,10,10,10,9,9,9,9,9,8,8,8,7,7,7,7
+9,D. innubila,male-0.1,male,yes,11/23-11/24,20231201,8-9 days,4,0.1 FFU,27.6nl,3:45,10 min ,10,6,6,6,6,5,5,5,5,1,0,0,0,0,0,0
+10,D. innubila,female-0.1,female,yes,11/23-11/24,20231201,8-9 days,4,0.1 FFU,27.6nl,3:51,10 min,10,10,10,10,10,10,10,9,4,1,0,0,0,0,0,0
+11,D. innubila,male-1,male,yes,11/23-11/24,20231201,8-9 days,3,1 FFU,27.6nl,4:05,8 min,10,8,8,8,8,8,7,5,3,2,1,1,0,0,0,0
+12,D. innubila,female-1,female,yes,11/23-11/24,20231201,8-9 days,3,1 FFU,27.6nl,4:10,10 min,10,10,10,10,10,10,10,8,6,3,0,0,0,0,0,0
+13,D. innubila,male-3,male,yes,11/23-11/24,20231201,8-9 days,2,3 FFU,27.6nl,4:25, 6 min,10,9,9,9,9,9,9,8,8,5,3,1,0,0,0,0
+14,D. innubila,female-3,female,yes,11/23-11/24,20231201,8-9 days,2,3 FFU,27.6nl,4:30, 10 min,9,9,9,9,9,8,8,8,3,0,0,0,0,0,0,0
+15,D. innubila,male-6,male,yes,11/23-11/24,20231201,8-9 days,1,6 FFU ,27.6nl,4:38,6 min,11,10,10,10,10,10,10,10,8,3,0,0,0,0,0,0
+16,D. innubila,female-6,female,yes,11/23-11/24,20231201,8-9 days,1,6 FFU ,27.6nl,4:44,6 min,10,10,10,10,10,10,10,9,8,1,0,0,0,0,0,0
+1,D. innubila,male-CCM,male,yes,11/26-11/27,20231205,8-9 days,CCM,CCM,27.6nl,2:55,5 min,10,9,9,9,9,8,8,8,7,7,7,7,7,7,7,7
+2,D. innubila,female-CCM,female,yes,11/26-11/27,20231205,8-9 days,CCM,CCM,27.6nl,3:01,5 min,10,10,10,10,10,10,10,9,9,9,9,9,9,8,8,8
+3,D. innubila,male-CCM,male,yes,11/26-11/27,20231205,8-9 days,CCM,CCM,27.6nl,3:06,6 min,10,10,10,10,10,9,8,7,7,7,7,7,7,7,7,7
+4,D. innubila,female-CCM,female,yes,11/26-11/27,20231205,8-9 days,CCM,CCM,27.6nl,3:12,7 min,10,9,9,9,8,7,7,7,7,7,6,6,6,6,6,5
+5,D. innubila,male-0.01,male,yes,11/26-11/27,20231205,8-9 days,5,0.01FFU,27.6nl,3:28,7 min,10,10,10,10,10,10,10,10,10,10,9,9,6,6,6,6
+6,D. innubila,female-0.01,female,yes,11/26-11/27,20231205,8-9 days,5,0.01FFU,27.6nl,3:37,5 min,10,10,10,10,8,8,8,8,7,8,7,7,6,6,6,6
+7,D. innubila,male-0.1,male,yes,11/26-11/27,20231205,8-9 days,4,0.1FFU,27.6nl,3:51,5 min,10,10,10,10,9,9,9,9,8,5,1,1,0,0,0,0
+8,D. innubila,female-0.1,female,yes,11/26-11/27,20231205,8-9 days,4,0.1FFU,27.6nl,3:56,5 min,10,9,9,9,9,8,8,7,7,3,1,1,1,1,1,1
+9,D. innubila,male-1,male,yes,11/26-11/27,20231205,8-9 days,3,1 FFU,27.6nl,4:11,6 min ,10,9,9,9,9,9,9,7,7,6,4,4,3,1,1,0
+10,D. innubila,female-1,female,yes,11/26-11/27,20231205,8-9 days,3,1FFU,27.6nl,4:17,5 min,10,10,10,10,10,10,8,9,5,2,0,0,0,0,0,0
+11,D. innubila,male-3,male,yes,11/26-11/27,20231205,8-9 days,2,3 FFU,27.6nl,4:32,6 min,10,10,10,10,10,9,9,9,8,4,1,1,1,0,0,0
+12,D. innubila,female-3,female,yes,11/26-11/27,20231205,8-9 days,2,3 FFU,27.6nl,4:38,5 min,10,10,10,10,9,9,9,8,6,0,0,0,0,0,0,0
+13,D. innubila,male-6,male,yes,11/26-11/27,20231205,8-9 days,1,6 FFU,27.6nl,4:53,5 min,10,10,10,10,10,10,10,10,9,5,4,2,1,1,1,1
+14,D. innubila,female-6,female,yes,11/26-11/27,20231205,8-9 days,1,6 FFU,27.6nl,4:57,5 min,10,10,10,10,10,10,10,9,7,3,1,1,0,0,0,0
+1,D. innubila,male-CCM,male,mated ,2/1-2/2,20240209,7-8 days,CCM,CCM,27.6nl,3:51,10 min,10,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9
+2,D. innubila,female-CCM,female,mated ,2/1-2/2,20240209,7-8 days,CCM,CCM,27.6nl,3:51,10 min,10,10,10,10,10,10,9,8,8,8,8,8,8,8,8,8
+3,D. innubila,male-CCM,male,mated ,2/1-2/2,20240209,7-8 days,CCM,CCM,27.6nl,4:02,10 min,10,9,9,9,9,8,8,8,8,8,8,8,8,8,8,8
+4,D. innubila,female-CCM,female,mated ,2/1-2/2,20240209,7-8 days,CCM,CCM,27.6nl,4:02,10 min,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10
+6,D. innubila,male-0.01,male,mated ,2/1-2/2,20240209,7-8 days,5,0.01FFU,27.6nl,4:25,10 min,10,10,10,10,10,10,10,10,10,10,9,9,9,9,9,9
+7,D. innubila,female-0.01,female,mated ,2/1-2/2,20240209,7-8 days,5,0.01FFU,27.6nl,4:25,10 min,10,10,10,10,10,9,8,7,7,7,7,7,7,7,7,7
+8,D. innubila,male-0.1,male,mated ,2/1-2/2,20240209,7-8 days,4,0.1FFU,27.6nl,4:41,8 min,10,10,10,10,9,9,9,7,6,5,2,2,0,0,0,0
+9,D. innubila,female-0.1,female,mated ,2/1-2/2,20240209,7-8 days,4,0.1FFU,27.6nl,4:41,8 min,10,8,8,8,7,7,6,5,4,4,1,1,1,1,1,1
+10,D. innubila,male-1,male,mated ,2/1-2/2,20240209,7-8 days,3,1 FFU,27.6nl,4:53,10 min,10,9,9,9,9,9,8,8,7,5,1,1,0,0,0,0
+11,D. innubila,female-1,female,mated ,2/1-2/2,20240209,7-8 days,3,1 FFU,27.6nl,4:53,10 min,10,8,8,8,8,8,8,7,6,1,1,0,0,0,0,0
+12,D. innubila,male-3,male,mated ,2/1-2/2,20240209,7-8 days,2,3 FFU,27.6nl,5:06,8 min,10,8,8,8,7,7,5,3,1,0,0,0,0,0,0,0
+13,D. innubila,female-3,female,mated ,2/1-2/2,20240209,7-8 days,2,3 FFU,27.6nl,5:06,8 min,9,8,8,8,8,8,7,4,3,1,1,1,0,0,0,0
+14,D. innubila,male-6,male,mated ,2/1-2/2,20240209,7-8 days,1,6 FFU,27.6nl,5:21,8 min,10,10,10,10,8,7,7,7,6,3,3,3,3,0,0,0
+15,D. innubila,female-6,female,mated ,2/1-2/2,20240209,7-8 days,1,6 FFU,27.6nl,5:21,8 min,10,10,10,10,10,10,10,10,8,4,3,3,0,0,0,0

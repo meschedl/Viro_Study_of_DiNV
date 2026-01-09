@@ -1,0 +1,369 @@
+---
+title: "p4-Dilutions-4-rep-combo"
+format: gfm
+editor: visual
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(dpi=300,fig.width=7, fig.height = 9)
+```
+
+Load in packages needed for the analysis
+
+```{r}
+library("survival")
+library("survminer")
+library(dplyr)
+library(tidyr)
+library(stringr)
+library(AICcmodavg)
+```
+
+### Loop to convert the example data.frame 'df' into properly formatted data.frame 'results'
+
+```{r}
+#write a function to transform a data.frame that has the column format 'vial | treatment | D0 | D1 | D2...', with one row for each vial
+#into a long version in tidy format that can be input to make a survivorship curve
+convert_df<-function(df){
+  #open empty data.frame to store results
+  results<-data.frame(vial=character(),treatment=character(),dead=numeric(),status=numeric())
+  #This loop will index out each row (one row per vial) one at a time, transform it into long format (one row per fly), and add the information to the empty data.frame called results
+  for(i in 1:nrow(df)){
+  #isolate the row (vial) you want to work on
+  temp<-df[i,]
+    #iteratively isolate each day for this vial (day 0 must be column 3, day 1 column 4, etc.). Loop stops the column before the last day
+    for(j in 3:(ncol(temp)-1)){
+      #assign the number of flies that died in the vial on that day (starting with day 1) to the variable 'z'
+      z<-temp[1,j]-temp[1,j+1]
+        #if >0 flies died add this information to the results dataframe
+        if(z>0){
+          #iterate over 1 through total number of dead flies
+          for(k in 1:z){
+            #add a new row to the 'results' data.frame for the given dead fly, specifying vial #, treatment, day died, and
+            #record the current vial #
+            vial<-temp[,1]
+            #record the genotype of the current vial
+            treatment<-temp[,2]
+            #record the death date of the flies that died on this day (assumes that your input DF starts with day 0 in column 3)
+            dd<-j-2
+            #append this information into a new row in the 'results' data.frame, and add a '1' in the 4th column to indicate mortality
+            results[nrow(results)+1,]<- c(vial,treatment,dd,1)
+          } #close for loop
+        } #close if loop
+    } #close for loop
+  
+  #now assign the number of flies remaining in the vial on the last day (value in the last column of the row) to the variable 'z'
+  z<-temp[1,j+1]
+    #if there are any flies alive in the vial on the last day
+    if(z>0){
+      #iterate over 1:(number of flies alive on the last day)
+      for(l in 1:z){
+        #record the current vial #
+        vial<-temp[,1]
+        #record the genotype of the current vial
+        treatment<-temp[,2]
+        #record the last day we recorded this fly alive (assumes that your input DF starts with day 0 in column 3)
+        dd<-j-2
+        #append this information into a new row in the 'results' data.frame, and add a '0' in the 4th column to indicate that the fly made it to the end of the experiment
+        results[nrow(results)+1,]<- c(vial,treatment,dd,0)
+      } #close for loop
+    } #close if loop
+  } #close original for loop
+results$dead<-as.numeric(results$dead)  #reiterate that this column must be class numeric
+results$status<-as.numeric(results$status)  #reiterate that this column must be class numeric
+results$vial <- as.factor(results$vial) # make sure vial is considered a factor
+# gives you only the results dataframe as output from function 
+return(results) 
+} #close function
+```
+
+Read in raw data
+
+**Note that for these datasets, the adjusted N number is the number of flies alive on day 2 because there seemed to be more early death in these experiments than usual**
+
+```{r}
+#read the file from csv
+df<-read.csv("/Users/maggieschedl/Desktop/Github/Unckless_Lab_Resources/Infection_survival_analyses/20240209-dilution-rep-4/dilution-infection-combo-sheet.csv")
+
+# Remove the rows of the undiluted samples because I did not do those for the other replicates
+df <- df[c(1:12, 15:56),]
+# separate out columns needed
+df <- df[,c(1,3,15:29)]
+
+```
+
+Convert dataframe
+
+```{r}
+df.convert<-convert_df(df)
+```
+
+Plot survivial curve with every line separate, yes this is a mess
+
+```{r}
+# change to not have confidence intervals in this one so you can see them 
+df_fit<- survfit(Surv(dead, status) ~ treatment, data=df.convert)
+ggsurvplot(df_fit,
+          pval = FALSE, conf.int = FALSE,
+          #risk.table = TRUE, # Add risk table
+          #risk.table.col = "strata", # Change risk table color by groups
+          #linetype = "strata", # Change line type by groups
+          #surv.median.line = "hv", # Specify median survival
+          ggtheme = theme_bw()) # Change ggplot2 theme
+          # palette = c("orchid", "aquamarine", "blueviolet", "darkslategray3")) + ylab("Survival Proporation") + xlab("Days post injection")
+
+```
+
+Add in columns for sex and dilution separately
+
+```{r}
+# add in sex information and DiNV information as separate columns by splitting the treatment column 
+# split the columns 
+df.convert_S <- str_split_fixed(df.convert$treatment, "-", 2)
+
+# change column names
+colnames(df.convert_S) <- c("sex", "dilution")
+
+# add columns to df 
+df.convert_full <- cbind(df.convert,df.convert_S)
+
+# add in block information 
+# this was not reproducable to count but I don't know how else to do it
+# first 118 rows are block A, second 127 rows are block B, the third 138 rows are block C, and the last 133 rows are block D
+df.convert_full$Block <- rep(c("A","B", "C", "D"), c(118, 127, 138, 129))
+
+
+```
+
+Plot survival curve with only females
+
+```{r}
+
+df.convert_fem <- df.convert_full[which(df.convert_full$sex != "male"),]
+
+# order treatments 
+df.convert_fem <- df.convert_fem %>% 
+  mutate(dilution = factor(dilution, levels = c("CCM", "0.01", "0.1", "1", "3", "6")))
+
+# change to not have confidence intervals in this one so you can see them 
+df_fit_fem<- survfit(Surv(dead, status) ~ dilution, data=df.convert_fem)
+ggsurvplot(df_fit_fem, size = 5,
+          pval = FALSE, conf.int = FALSE,
+          legend = "bottom",
+          font.tickslab = c(14),
+          font.x = c(16),
+          font.y = c(16),
+          font.t = c(16),
+          ggtheme = theme_light(),
+          title = expression(paste("Female",italic(" D. innubila "), "Injected with Dilutions of Passage 4 DiNV")),
+          legend.title="Treatment",
+          legend.labs=c("CCM", "0.01 FFU", "0.1 FFU", "1 FFU", "3 FFU", "6 FFU"),
+          font.legend = c(14),
+          palette = c("#E7E1EF", "#C994C7","#DF65B0","#E7298A" ,"#980043", "#67001F")) + ylab("Survival Proporation") + xlab("Days post injection")
+        
+          
+
+```
+
+Plot survival curve with only males
+
+```{r}
+
+df.convert_m <- df.convert_full[which(df.convert_full$sex != "female"),]
+
+# order treatments 
+df.convert_m <- df.convert_m %>% 
+  mutate(dilution = factor(dilution, levels = c("CCM", "0.01", "0.1", "1", "3", "6")))
+
+# change to not have confidence intervals in this one so you can see them 
+df_fit_m<- survfit(Surv(dead, status) ~ dilution, data=df.convert_m)
+ggsurvplot(df_fit_m, size = 5,
+          pval = FALSE, conf.int = FALSE,
+          legend = "bottom",
+          font.tickslab = c(14),
+          font.x = c(16),
+          font.y = c(16),
+          font.t = c(16),
+          ggtheme = theme_light(),
+          title = expression(paste("Male",italic(" D. innubila "), "Injected with Dilutions of Passage 4 DiNV")),
+          legend.title="Treatment",
+          legend.labs=c("CCM", "0.01 FFU", "0.1 FFU", "1 FFU", "3 FFU", "6 FFU"),
+          font.legend = c(14),
+          palette = c("#E7E1EF", "#C994C7","#DF65B0","#E7298A" ,"#980043", "#67001F")) + ylab("Survival Proporation") + xlab("Days post injection")
+        
+          
+```
+
+Look at median survival time
+
+```{r}
+# females 
+surv_median(df_fit_fem, combine = FALSE)
+# males 
+surv_median(df_fit_m, combine = FALSE)
+```
+
+Look at model for males comparing dilutions
+
+```{r}
+male_1 <- coxph(Surv(dead, status) ~ dilution + Block, data=df.convert_m)
+summary(male_1)
+```
+
+Look at model for females comparing dilutions
+
+```{r}
+female_1 <- coxph(Surv(dead, status) ~ dilution + Block, data=df.convert_fem)
+summary(female_1)
+```
+
+Compare all dilutions with sex as an interaction term Using continuous variables
+
+```{r}
+# make dilution as a numeric/continuous variable
+# make a duplicate column 
+df.convert_full$numeric.dilution <- df.convert_full$dilution
+# set CCM to a dose of 0
+df.convert_full$numeric.dilution[which(df.convert_full$numeric.dilution == "CCM")] = 0
+# make all values numeric 
+df.convert_full$numeric.dilution <- as.numeric(df.convert_full$numeric.dilution)
+
+df_all_fit<- coxph(Surv(dead, status) ~ sex*numeric.dilution + Block, data=df.convert_full)
+summary(df_all_fit)
+```
+
+Compare above model with no sex
+
+```{r}
+df_all_nosex_fit<- coxph(Surv(dead, status) ~ numeric.dilution + Block, data=df.convert_full)
+summary(df_all_nosex_fit)
+
+```
+
+Model with numeric dilution, block, and sex with no interaction
+
+```{r}
+df_all_noint_fit<- coxph(Surv(dead, status) ~ numeric.dilution + Block + sex, data=df.convert_full)
+summary(df_all_noint_fit)
+```
+
+Compare all three models together
+
+```{r}
+
+models <- list(df_all_fit, df_all_nosex_fit, df_all_noint_fit)
+
+model.names <- c( 'model with sex and dilution interaction', 'model without sex as a variable', 'model with sex but no interaction')
+
+aictab(cand.set = models, modnames = model.names)
+
+# best model is df_all_noint_fit but not by much 
+summary(df_all_noint_fit)
+```
+
+Compare 0.1 FFU, 1 FFU, 3 FFU, and 6 FFU together
+
+```{r}
+# remove CCM or 0 dose treatment 
+df_highdils <- df.convert_full[which(df.convert_full$numeric.dilution != 0),]
+# remove 0.01 FFU dose treatment 
+df_highdils <- df_highdils[which(df_highdils$numeric.dilution != 0.01),]
+
+# dilution and sex interaction
+df_highdils_fit <- coxph(Surv(dead, status) ~ numeric.dilution*sex + Block, data=df_highdils)
+summary(df_highdils_fit)
+# dilution and sex no interaction 
+df_highdils_fitni <- coxph(Surv(dead, status) ~ numeric.dilution + sex + Block, data=df_highdils)
+summary(df_highdils_fitni)
+# dilution no sex
+df_highdils_fitns <- coxph(Surv(dead, status) ~ numeric.dilution + Block, data=df_highdils)
+summary(df_highdils_fitns)
+
+
+
+
+
+models2 <- list(df_highdils_fit, df_highdils_fitni, df_highdils_fitns )
+
+model.names2 <- c( 'dilution and sex interaction', 'dilution and sex no interaction', 'just dilution')
+
+aictab(cand.set = models2, modnames = model.names2)
+
+# best model is df_highdils_fitni no interaction 
+summary(df_highdils_fitni)
+```
+
+Compare 0.01 FFU and CCM together
+
+```{r}
+# remove 1, 3, 6, 0.1 dose treatment 
+df_lowdils <- df.convert_full[which(df.convert_full$numeric.dilution != 0.1),]
+# remove 0.01 FFU dose treatment 
+df_lowdils <- df_lowdils[which(df_lowdils$numeric.dilution != 1),]
+df_lowdils <- df_lowdils[which(df_lowdils$numeric.dilution != 3),]
+df_lowdils <- df_lowdils[which(df_lowdils$numeric.dilution != 6),]
+
+# dilution and sex interaction 
+df_lowdils_fit<- coxph(Surv(dead, status) ~ numeric.dilution*sex + Block, data=df_lowdils)
+summary(df_lowdils_fit)
+# dilution and sex no interaction 
+df_lowdils_fitni <- coxph(Surv(dead, status) ~ numeric.dilution + sex + Block, data=df_lowdils)
+summary(df_lowdils_fitni)
+# dilution no sex
+df_lowdils_fitns <- coxph(Surv(dead, status) ~ numeric.dilution + Block, data=df_lowdils)
+summary(df_lowdils_fitns)
+
+
+models3 <- list(df_lowdils_fit, df_lowdils_fitni, df_lowdils_fitns )
+
+model.names3 <- c( 'dilution and sex interaction', 'dilution and sex no interaction', 'just dilution')
+
+aictab(cand.set = models3, modnames = model.names3)
+
+# best model does not have sex df_lowdils_fitns
+summary(df_lowdils_fitns)
+```
+
+
+Changing color pallet and lines for paper 
+
+Female 
+
+```{r}
+df_fit_fem<- survfit(Surv(dead, status) ~ dilution, data=df.convert_fem)
+ggsurvplot(df_fit_fem, size = 2.5,
+          pval = FALSE, conf.int = FALSE,
+          legend = "bottom",
+          font.tickslab = c(14),
+          font.x = c(16),
+          font.y = c(16),
+          font.t = c(16),
+          ggtheme = theme_light(),
+          title = expression(paste("Female",italic(" D. innubila "), "Injected with Dilutions of Passage 4 DiNV")),
+          legend.title="Treatment",
+          legend.labs=c("CCM", "0.01 FFU", "0.1 FFU", "1 FFU", "3 FFU", "6 FFU"),
+          font.legend = c(14),
+          palette = c("#009E73", "#648FFF","#785EF0","#DC267F" ,"#FE6100", "#FFB000")) + ylab("Survival Proporation") + xlab("Days post injection")
+        
+```
+
+Male
+
+```{r}
+df_fit_m<- survfit(Surv(dead, status) ~ dilution, data=df.convert_m)
+ggsurvplot(df_fit_m, size = 2.5,
+          pval = FALSE, conf.int = FALSE,
+          legend = "bottom",
+          font.tickslab = c(14),
+          font.x = c(16),
+          font.y = c(16),
+          font.t = c(16),
+          ggtheme = theme_light(),
+          title = expression(paste("Male",italic(" D. innubila "), "Injected with Dilutions of Passage 4 DiNV")),
+          legend.title="Treatment",
+          legend.labs=c("CCM", "0.01 FFU", "0.1 FFU", "1 FFU", "3 FFU", "6 FFU"),
+          font.legend = c(14),
+          palette = c("#009E73", "#648FFF","#785EF0","#DC267F" ,"#FE6100", "#FFB000")) + ylab("Survival Proporation") + xlab("Days post injection")
+```
+
+

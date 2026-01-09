@@ -1,0 +1,309 @@
+---
+title: "20240324-Dv1-Mdy88-qPCR"
+format: gfm
+editor: visual
+---
+
+```{r}
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(scales)
+library(Rmisc)
+library(rstatix)
+library(AICcmodavg)
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(dpi=300,fig.width=7, fig.height = 6)
+```
+
+Load in dataset
+
+```{r}
+Cq_values <- read.csv("/Users/maggieschedl/Desktop/Github/Unckless_Lab_Resources/qPCR_analysis/20240324-Dv1-Myd88-qPCR/20240324-myd88-Dv1-qPCR.csv")
+```
+
+Look at raw Cq values
+
+```{r}
+ggplot(Cq_values, aes(x= Cq, fill = primer)) + geom_histogram(position = "dodge") + facet_grid(~cell_type ~day) 
+```
+
+Calculate variance and mean of Cq value between the technical replicates
+
+```{r}
+# use the variance function, and calculates the variance in Cq by the unique.name (each sample/primer has 3 Cq values to 
+# calculate the variance by)
+Cq_values$Cq_var <- ave(Cq_values$Cq, Cq_values$unique_name, FUN=var)
+
+# use the mean function, and calculates the mean of Cq values by the unique.name (each sample/primer has 3 Cq values to 
+# calculate the mean by)
+Cq_values$Cq_mean <- ave(Cq_values$Cq, Cq_values$unique_name, FUN=mean)
+
+# Keep all rows where the replicate is 1 (or you could do 2 or 3)
+# make into new Df so we keep the original with all the Cq values
+Cq_values_1rep <- Cq_values[which(Cq_values$replicate == "1"),]
+
+# histogram of all variances
+ggplot(Cq_values_1rep, aes(x=Cq_var)) + geom_histogram(bins = 50)
+
+# I think some of these are really high because for the  cell control PIF3 some are 40 and some are 35, which will really mess this up 
+# start trying to remove some of the problematic Cq values where 1 is different than the other two 
+# first order df by the Cq variance 
+ordered <- Cq_values[order(Cq_values$Cq_var, decreasing = TRUE),]
+head(ordered)
+# change rownames
+rownames(ordered) <- NULL
+# what rows have a Cq value that is very different than the other 2 replicates 
+# row 2, 6, 8, 10, 15, 17, 20, 25, 30, 31, 36
+# try to remove those rows with negative indexing 
+ordered_2 <- ordered[-c(2, 6, 8, 10, 15, 17, 20, 25, 30, 31, 36), ]
+# I think this worked 
+# now to re-do the variance and the means 
+ordered_2$Cq_var <- ave(ordered_2$Cq, ordered_2$unique_name, FUN=var)
+ordered_2$Cq_mean <- ave(ordered_2$Cq, ordered_2$unique_name, FUN=mean)
+# this seems to have worked good 
+# now I need to keep only 1 replicate row 
+# remove "duplicated" rows based on the unique_name column: each technical replicate should have the same unique_name
+Cq_values_var_1rep <- ordered_2[!duplicated(ordered_2$unique_name), ]
+# re-look at histogram of variances
+# there will probably be a few high ones because for some samples there was not an obvious 1 Cq value different than the others 
+ggplot(Cq_values_var_1rep, aes(x=Cq_var)) + geom_histogram(bins = 50)
+# at this point I am ok with that 1 high variance 
+
+
+### old stuff not used 
+# what if I looked at these without cell control pif3 
+#rownames(Cq_values_1rep) <- NULL
+#Cq_values_1rep_no_cc0 <- Cq_values_1rep[c(16:64),]
+
+# histogram of variances now 
+#ggplot(Cq_values_1rep_no_cc0, aes(x=Cq_var)) + geom_histogram(bins = 50)
+```
+
+Calculating Delta Cqs between Lambda and PIF3
+
+```{r}
+# samples are not ordered properly
+# they need to be ordered with the two primer samples next to each other for each sample 
+# order them by the sample
+Cq_values_var_1rep <- Cq_values_var_1rep[order(Cq_values_var_1rep$sample),]
+Cq_values_var_1rep
+# this doesn't order them with a set pattern of which primer first.. 
+# try ordering by primer first then by sample 
+Cq_values_var_1rep <- Cq_values_var_1rep[order(Cq_values_var_1rep$primer),]
+Cq_values_var_1rep
+# then order by sample 
+Cq_values_var_1rep <- Cq_values_var_1rep[order(Cq_values_var_1rep$sample),]
+Cq_values_var_1rep
+# this consistently LAMBDA first, then PIF 3 
+nrow(Cq_values_var_1rep)
+
+# Separate that dataframe, incriminating by 2, every number between 1-64 (number of rows in dataframe)
+Cq_values_var_1rep$Cq_mean[seq(1,64,2)] # these are the LAMBDA Cq means 
+Cq_values_var_1rep$Cq_mean[seq(2,64,2)] # these are the PIF 3 primer Cq means 
+
+# make the delta Cq by subtracting the PIF 3 values from the LAMBDA primer values
+# and this is saved as a vector in R 
+delta_Cqs <- Cq_values_var_1rep$Cq_mean[seq(1,64,2)] - Cq_values_var_1rep$Cq_mean[seq(2,64,2)]
+#vector
+delta_Cqs
+
+# Keep only rows that are PIF3 because now we have two rows per sample
+Cq_values1rep_Delta <- Cq_values_var_1rep[which(Cq_values_var_1rep$primer == "PIF 3"),]
+# And then add in the delta Cqs as a new column
+Cq_values1rep_Delta$delta_Cq <- delta_Cqs
+
+# do 2^ delta Cq
+Cq_values1rep_Delta$delta_Cq_2 <- 2^(delta_Cqs)
+
+# plot 
+ggplot(Cq_values1rep_Delta, aes(y= delta_Cq_2, x=cell_type, fill=infection)) + geom_boxplot()  + theme_linedraw()  + facet_grid(~day)  + scale_y_continuous(trans='log10', breaks=trans_breaks('log10', function(x) 10^x), labels=trans_format('log10', math_format(10^.x)))
+
+```
+
+Calculating delta delta Cq
+
+Start with separating out control and DiNV
+
+```{r}
+# separate out control and DiNV samples 
+control <- Cq_values1rep_Delta[which(Cq_values1rep_Delta$infection == "control"),]
+DiNV <- Cq_values1rep_Delta[which(Cq_values1rep_Delta$infection != "control"),]
+ 
+# separate out the day 0 samples to start with 
+day_0_cc <- control[which(control$day == "day0"),]
+# separate out cell type Dv-1 
+day_0_cc_Dv1 <- day_0_cc[which(day_0_cc$cell_type == "DV-1"),]
+# find mean of Delta Cq (not 2^delta) for Dv-1
+mean(day_0_cc_Dv1$delta_Cq)
+# -7.723333
+# separate out cell type Myd88 
+day_0_cc_Myd <- day_0_cc[which(day_0_cc$cell_type != "DV-1"),]
+# find mean of Delta Cq (not 2^delta) for Dv-1
+mean(day_0_cc_Myd$delta_Cq)
+# -8.615833
+
+# separate out day 5 only from controls 
+day_5_cc <- control[which(control$day != "day0"),]
+# separate out Dv-1
+day_5_cc_Dv1 <- day_5_cc[which(day_5_cc$cell_type == "DV-1"),]
+
+# subtract average day 0 delta Cq for Dv-1 from the delta Cq of all others 
+day_5_cc_Dv1_delta_delta <- day_5_cc_Dv1$delta_Cq - -7.723333
+day_5_cc_Dv1_delta_delta
+
+# add as column 
+day_5_cc_Dv1$delta_delta_Cq <- day_5_cc_Dv1_delta_delta
+
+# do 2^ delta delta 
+day_5_cc_Dv1$delta_delta_Cq_2 <- 2^(day_5_cc_Dv1_delta_delta)
+
+# separate out Myd88
+day_5_cc_Myd <- day_5_cc[which(day_5_cc$cell_type != "DV-1"),]
+
+# subtract average day 0 delta Cq for Dv-1 from the delta Cq of all others 
+day_5_cc_Myd_delta_delta <- day_5_cc_Myd$delta_Cq - -8.615833
+day_5_cc_Myd_delta_delta
+
+# add as column 
+day_5_cc_Myd$delta_delta_Cq <- day_5_cc_Myd_delta_delta
+
+# do 2^ delta delta 
+day_5_cc_Myd$delta_delta_Cq_2 <- 2^(day_5_cc_Myd_delta_delta)
+
+# combine controls back together  
+Control_delta_delta <- rbind(day_5_cc_Dv1, day_5_cc_Myd)
+```
+
+Delta Delta calculations for DiNV samples
+
+```{r}
+ 
+# separate out the day 0 samples to start with 
+day_0_DiNV <- DiNV[which(DiNV$day == "day0"),]
+# separate out cell type Dv-1 
+day_0_DiNV_Dv1 <- day_0_DiNV[which(day_0_DiNV$cell_type == "DV-1"),]
+# find mean of Delta Cq (not 2^delta) for Dv-1
+mean(day_0_DiNV_Dv1$delta_Cq)
+# 2.6925
+# separate out cell type Myd88 
+day_0_DiNV_Myd <- day_0_DiNV[which(day_0_DiNV$cell_type != "DV-1"),]
+# find mean of Delta Cq (not 2^delta) for Dv-1
+mean(day_0_DiNV_Myd$delta_Cq)
+# 2.852917
+
+# separate out day 5 only from DiNVs
+day_5_DiNV <- DiNV[which(DiNV$day != "day0"),]
+# separate out Dv-1
+day_5_DiNV_Dv1 <- day_5_DiNV[which(day_5_DiNV$cell_type == "DV-1"),]
+
+# subtract average day 0 delta Cq for Dv-1 from the delta Cq of all others 
+day_5_DiNV_Dv1_delta_delta <- day_5_DiNV_Dv1$delta_Cq - 2.6925
+day_5_DiNV_Dv1_delta_delta
+
+# add as column 
+day_5_DiNV_Dv1$delta_delta_Cq <- day_5_DiNV_Dv1_delta_delta
+
+# do 2^ delta delta 
+day_5_DiNV_Dv1$delta_delta_Cq_2 <- 2^(day_5_DiNV_Dv1_delta_delta)
+
+# separate out Myd88
+day_5_DiNV_Myd <- day_5_DiNV[which(day_5_DiNV$cell_type != "DV-1"),]
+
+# subtract average day 0 delta Cq for Dv-1 from the delta Cq of all others 
+day_5_DiNV_Myd_delta_delta <- day_5_DiNV_Myd$delta_Cq - 2.852917
+day_5_DiNV_Myd_delta_delta
+
+# add as column 
+day_5_DiNV_Myd$delta_delta_Cq <- day_5_DiNV_Myd_delta_delta
+
+# do 2^ delta delta 
+day_5_DiNV_Myd$delta_delta_Cq_2 <- 2^(day_5_DiNV_Myd_delta_delta)
+
+# combine controls back together  
+DiNV_delta_delta <- rbind(day_5_DiNV_Dv1, day_5_DiNV_Myd)
+```
+
+Combine control and infected datasets and plot
+
+```{r}
+
+delta_delta <- rbind(Control_delta_delta, DiNV_delta_delta)
+rownames(delta_delta) <- NULL
+
+# remove sample 28 because LAMBDA value was outlier and skewing delta Cq 
+delta_deltar <- delta_delta[c(1:11, 13:16), ]
+
+legend_title <- "Infection"
+
+# plot 
+ggplot(delta_deltar, aes(y= delta_delta_Cq_2, x=cell_type, fill=infection)) + geom_boxplot()  + theme_light()  + scale_fill_manual(legend_title, values=c("#C994C7", "#CE1256"), labels= c("Cell culture medium", "DiNV")) + geom_dotplot(binaxis='y', stackdir='center', dotsize=0.75, position=position_dodge(0.8)) + scale_x_discrete(labels=c("DV-1" = "Dv-1", "Myd88" = "Myd88"))+ 
+  theme(axis.text=element_text(size=12),axis.title=element_text(size=14), legend.text=element_text(size=12), legend.title=element_text(size=14), legend.position = "bottom") +
+  labs(title = "Comparing Increase in Virus in Dv-1 \nand Myd88 Cells 5 Days Post Innoculation",y = "Relative DiNV Genome Increase", x = "Cell Line")
+```
+
+find mean increase for Dv-1 samples
+
+```{r}
+# separate out Dv-1
+Dv <- delta_deltar[which(delta_deltar$cell_type == "DV-1"),]
+# separate out DiNV infected 
+DvD <- Dv[which(Dv$infection == "DiNV"),]
+meanD <- mean(DvD$delta_delta_Cq_2)
+meanD
+```
+
+T test statistics
+
+```{r}
+stat.test <- delta_deltar %>%
+  group_by(infection) %>%
+  t_test(delta_delta_Cq_2 ~ cell_type) %>%
+  adjust_pvalue(method = "bonferroni") %>%
+  add_significance("p.adj")
+stat.test
+```
+
+Linear model statistics (better)
+
+```{r}
+# compare model with infection and cell type
+# use only the delta delta Cq, not 2^
+Dv_Myd88_model <- lm(delta_delta_Cq~infection*cell_type, data = delta_deltar)
+summary(aov(Dv_Myd88_model)) 
+
+# model without interaction 
+Dv_Myd88_model2 <- lm(delta_delta_Cq~infection + cell_type, data = delta_deltar)
+summary(aov(Dv_Myd88_model2))
+
+# model without cell type 
+Dv_Myd88_model3 <- lm(delta_delta_Cq~infection, data = delta_deltar)
+summary(aov(Dv_Myd88_model3))
+
+
+# try special package for comparing AIC 
+models <- list( Dv_Myd88_model, Dv_Myd88_model2, Dv_Myd88_model3)
+
+model.names <- c( 'interaction', 'no interaction', 'no cell type')
+
+aictab(cand.set = models, modnames = model.names)
+
+# model with interaction term is best model 
+```
+
+
+Figure adjustments for paper 
+
+change legend position
+```{r}
+legend_title <- "Infection"
+
+# plot 
+ggplot(delta_deltar, aes(y= delta_delta_Cq_2, x=cell_type, fill=infection)) + geom_boxplot()  + theme_light()  + scale_fill_manual(legend_title, values=c("#009E73", "#CC79A7"), labels= c("Cell culture medium", "DiNV")) + geom_dotplot(binaxis='y', stackdir='center', dotsize=0.75, position=position_dodge(0.8)) + scale_x_discrete(labels=c("DV-1" = "Dv-1", "Myd88" = "Myd88"))+ 
+  theme(axis.text=element_text(size=12),axis.title=element_text(size=14), legend.text=element_text(size=12), legend.title=element_text(size=14), legend.position = c(0.8, 0.85), 
+        legend.background = element_rect(colour = 'black', fill = 'white', linetype='solid')) +
+  labs(title = "Comparing Increase in Virus in Dv-1 \nand Myd88 Cells 5 Days Post Innoculation",y = "Relative DiNV Genome Increase", x = "Cell Line")
+```
+

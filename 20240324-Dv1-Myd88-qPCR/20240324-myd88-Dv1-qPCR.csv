@@ -1,0 +1,193 @@
+well,sample,replicate,primer,cell_type,infection,day,unique_name,Cq
+A01,1,1,PIF 3,DV-1,control,day0,Dv-pif-cc-0-1,40.00
+A02,1,2,PIF 3,DV-1,control,day0,Dv-pif-cc-0-1,40.00
+A03,1,3,PIF 3,DV-1,control,day0,Dv-pif-cc-0-1,40.00
+A04,2,1,PIF 3,DV-1,control,day0,Dv-pif-cc-0-2,40.00
+A05,2,2,PIF 3,DV-1,control,day0,Dv-pif-cc-0-2,40.00
+A06,2,3,PIF 3,DV-1,control,day0,Dv-pif-cc-0-2,40.00
+A07,3,1,PIF 3,DV-1,control,day0,Dv-pif-cc-0-3,40.00
+A08,3,2,PIF 3,DV-1,control,day0,Dv-pif-cc-0-3,40.00
+A09,3,3,PIF 3,DV-1,control,day0,Dv-pif-cc-0-3,37.97
+A10,4,1,PIF 3,DV-1,control,day0,Dv-pif-cc-0-4,36.28
+A11,4,2,PIF 3,DV-1,control,day0,Dv-pif-cc-0-4,40.00
+A12,4,3,PIF 3,DV-1,control,day0,Dv-pif-cc-0-4,36.22
+B01,5,1,PIF 3,Myd88,control,day0,Myd-pif-cc-0-1,40.00
+B02,5,2,PIF 3,Myd88,control,day0,Myd-pif-cc-0-1,40.00
+B03,5,3,PIF 3,Myd88,control,day0,Myd-pif-cc-0-1,40.00
+B04,6,1,PIF 3,Myd88,control,day0,Myd-pif-cc-0-2,35.02
+B05,6,2,PIF 3,Myd88,control,day0,Myd-pif-cc-0-2,40.00
+B06,6,3,PIF 3,Myd88,control,day0,Myd-pif-cc-0-2,40.00
+B07,7,1,PIF 3,Myd88,control,day0,Myd-pif-cc-0-3,40.00
+B08,7,2,PIF 3,Myd88,control,day0,Myd-pif-cc-0-3,40.00
+B09,7,3,PIF 3,Myd88,control,day0,Myd-pif-cc-0-3,40.00
+B10,8,1,PIF 3,Myd88,control,day0,Myd-pif-cc-0-4,40.00
+B11,8,2,PIF 3,Myd88,control,day0,Myd-pif-cc-0-4,40.00
+B12,8,3,PIF 3,Myd88,control,day0,Myd-pif-cc-0-4,40.00
+C01,9,1,PIF 3,DV-1,control,day5,Dv-pif-cc-5-1,40.00
+C02,9,2,PIF 3,DV-1,control,day5,Dv-pif-cc-5-1,34.72
+C03,9,3,PIF 3,DV-1,control,day5,Dv-pif-cc-5-1,40.00
+C04,10,1,PIF 3,DV-1,control,day5,Dv-pif-cc-5-2,40.00
+C05,10,2,PIF 3,DV-1,control,day5,Dv-pif-cc-5-2,40.00
+C06,10,3,PIF 3,DV-1,control,day5,Dv-pif-cc-5-2,34.88
+C07,11,1,PIF 3,DV-1,control,day5,Dv-pif-cc-5-3,40.00
+C08,11,2,PIF 3,DV-1,control,day5,Dv-pif-cc-5-3,34.99
+C09,11,3,PIF 3,DV-1,control,day5,Dv-pif-cc-5-3,40.00
+C10,12,1,PIF 3,DV-1,control,day5,Dv-pif-cc-5-4,40.00
+C11,12,2,PIF 3,DV-1,control,day5,Dv-pif-cc-5-4,40.00
+C12,12,3,PIF 3,DV-1,control,day5,Dv-pif-cc-5-4,35.13
+D01,13,1,PIF 3,Myd88,control,day5,Myd-pif-cc-5-1,40.00
+D02,13,2,PIF 3,Myd88,control,day5,Myd-pif-cc-5-1,40.00
+D03,13,3,PIF 3,Myd88,control,day5,Myd-pif-cc-5-1,40.00
+D04,14,1,PIF 3,Myd88,control,day5,Myd-pif-cc-5-2,40.00
+D05,14,2,PIF 3,Myd88,control,day5,Myd-pif-cc-5-2,40.00
+D06,14,3,PIF 3,Myd88,control,day5,Myd-pif-cc-5-2,40.00
+D07,15,1,PIF 3,Myd88,control,day5,Myd-pif-cc-5-3,34.04
+D08,15,2,PIF 3,Myd88,control,day5,Myd-pif-cc-5-3,35.33
+D09,15,3,PIF 3,Myd88,control,day5,Myd-pif-cc-5-3,35.03
+D10,16,1,PIF 3,Myd88,control,day5,Myd-pif-cc-5-4,40.00
+D11,16,2,PIF 3,Myd88,control,day5,Myd-pif-cc-5-4,40.00
+D12,16,3,PIF 3,Myd88,control,day5,Myd-pif-cc-5-4,40.00
+E01,17,1,PIF 3,DV-1,DiNV,day0,Dv-pif-D-0-1,28.07
+E02,17,2,PIF 3,DV-1,DiNV,day0,Dv-pif-D-0-1,28.11
+E03,17,3,PIF 3,DV-1,DiNV,day0,Dv-pif-D-0-1,28.35
+E04,18,1,PIF 3,DV-1,DiNV,day0,Dv-pif-D-0-2,29.50
+E05,18,2,PIF 3,DV-1,DiNV,day0,Dv-pif-D-0-2,29.34
+E06,18,3,PIF 3,DV-1,DiNV,day0,Dv-pif-D-0-2,29.78
+E07,19,1,PIF 3,DV-1,DiNV,day0,Dv-pif-D-0-3,26.81
+E08,19,2,PIF 3,DV-1,DiNV,day0,Dv-pif-D-0-3,26.91
+E09,19,3,PIF 3,DV-1,DiNV,day0,Dv-pif-D-0-3,26.83
+E10,20,1,PIF 3,DV-1,DiNV,day0,Dv-pif-D-0-4,27.65
+E11,20,2,PIF 3,DV-1,DiNV,day0,Dv-pif-D-0-4,27.76
+E12,20,3,PIF 3,DV-1,DiNV,day0,Dv-pif-D-0-4,27.80
+F01,21,1,PIF 3,Myd88,DiNV,day0,Myd-pif-D-0-1,26.83
+F02,21,2,PIF 3,Myd88,DiNV,day0,Myd-pif-D-0-1,26.93
+F03,21,3,PIF 3,Myd88,DiNV,day0,Myd-pif-D-0-1,26.75
+F04,22,1,PIF 3,Myd88,DiNV,day0,Myd-pif-D-0-2,27.52
+F05,22,2,PIF 3,Myd88,DiNV,day0,Myd-pif-D-0-2,27.64
+F06,22,3,PIF 3,Myd88,DiNV,day0,Myd-pif-D-0-2,27.60
+F07,23,1,PIF 3,Myd88,DiNV,day0,Myd-pif-D-0-3,28.70
+F08,23,2,PIF 3,Myd88,DiNV,day0,Myd-pif-D-0-3,29.00
+F09,23,3,PIF 3,Myd88,DiNV,day0,Myd-pif-D-0-3,29.22
+F10,24,1,PIF 3,Myd88,DiNV,day0,Myd-pif-D-0-4,29.18
+F11,24,2,PIF 3,Myd88,DiNV,day0,Myd-pif-D-0-4,29.40
+F12,24,3,PIF 3,Myd88,DiNV,day0,Myd-pif-D-0-4,29.32
+G01,25,1,PIF 3,DV-1,DiNV,day5,Dv-pif-D-5-1,21.11
+G02,25,2,PIF 3,DV-1,DiNV,day5,Dv-pif-D-5-1,21.09
+G03,25,3,PIF 3,DV-1,DiNV,day5,Dv-pif-D-5-1,20.97
+G04,26,1,PIF 3,DV-1,DiNV,day5,Dv-pif-D-5-2,21.57
+G05,26,2,PIF 3,DV-1,DiNV,day5,Dv-pif-D-5-2,21.67
+G06,26,3,PIF 3,DV-1,DiNV,day5,Dv-pif-D-5-2,21.80
+G07,27,1,PIF 3,DV-1,DiNV,day5,Dv-pif-D-5-3,21.55
+G08,27,2,PIF 3,DV-1,DiNV,day5,Dv-pif-D-5-3,21.79
+G09,27,3,PIF 3,DV-1,DiNV,day5,Dv-pif-D-5-3,21.75
+G10,28,1,PIF 3,DV-1,DiNV,day5,Dv-pif-D-5-4,20.47
+G11,28,2,PIF 3,DV-1,DiNV,day5,Dv-pif-D-5-4,20.55
+G12,28,3,PIF 3,DV-1,DiNV,day5,Dv-pif-D-5-4,20.60
+H01,29,1,PIF 3,Myd88,DiNV,day5,Myd-pif-D-5-1,29.33
+H02,29,2,PIF 3,Myd88,DiNV,day5,Myd-pif-D-5-1,29.15
+H03,29,3,PIF 3,Myd88,DiNV,day5,Myd-pif-D-5-1,29.12
+H04,30,1,PIF 3,Myd88,DiNV,day5,Myd-pif-D-5-2,30.48
+H05,30,2,PIF 3,Myd88,DiNV,day5,Myd-pif-D-5-2,30.02
+H06,30,3,PIF 3,Myd88,DiNV,day5,Myd-pif-D-5-2,30.28
+H07,31,1,PIF 3,Myd88,DiNV,day5,Myd-pif-D-5-3,31.63
+H08,31,2,PIF 3,Myd88,DiNV,day5,Myd-pif-D-5-3,30.25
+H09,31,3,PIF 3,Myd88,DiNV,day5,Myd-pif-D-5-3,31.00
+H10,32,1,PIF 3,Myd88,DiNV,day5,Myd-pif-D-5-4,28.81
+H11,32,2,PIF 3,Myd88,DiNV,day5,Myd-pif-D-5-4,28.85
+H12,32,3,PIF 3,Myd88,DiNV,day5,Myd-pif-D-5-4,29.24
+A01,1,1,LAMBDA,DV-1,control,day0,Dv-lam-cc-0-1,31.44
+A02,1,2,LAMBDA,DV-1,control,day0,Dv-lam-cc-0-1,31.17
+A03,1,3,LAMBDA,DV-1,control,day0,Dv-lam-cc-0-1,31.58
+A04,2,1,LAMBDA,DV-1,control,day0,Dv-lam-cc-0-2,31.00
+A05,2,2,LAMBDA,DV-1,control,day0,Dv-lam-cc-0-2,31.19
+A06,2,3,LAMBDA,DV-1,control,day0,Dv-lam-cc-0-2,31.28
+A07,3,1,LAMBDA,DV-1,control,day0,Dv-lam-cc-0-3,31.29
+A08,3,2,LAMBDA,DV-1,control,day0,Dv-lam-cc-0-3,31.60
+A09,3,3,LAMBDA,DV-1,control,day0,Dv-lam-cc-0-3,29.73
+A10,4,1,LAMBDA,DV-1,control,day0,Dv-lam-cc-0-4,31.31
+A11,4,2,LAMBDA,DV-1,control,day0,Dv-lam-cc-0-4,32.14
+A12,4,3,LAMBDA,DV-1,control,day0,Dv-lam-cc-0-4,32.34
+B01,5,1,LAMBDA,Myd88,control,day0,Myd-lam-cc-0-1,30.48
+B02,5,2,LAMBDA,Myd88,control,day0,Myd-lam-cc-0-1,30.54
+B03,5,3,LAMBDA,Myd88,control,day0,Myd-lam-cc-0-1,30.94
+B04,6,1,LAMBDA,Myd88,control,day0,Myd-lam-cc-0-2,31.75
+B05,6,2,LAMBDA,Myd88,control,day0,Myd-lam-cc-0-2,31.04
+B06,6,3,LAMBDA,Myd88,control,day0,Myd-lam-cc-0-2,31.20
+B07,7,1,LAMBDA,Myd88,control,day0,Myd-lam-cc-0-3,30.82
+B08,7,2,LAMBDA,Myd88,control,day0,Myd-lam-cc-0-3,30.29
+B09,7,3,LAMBDA,Myd88,control,day0,Myd-lam-cc-0-3,30.46
+B10,8,1,LAMBDA,Myd88,control,day0,Myd-lam-cc-0-4,33.73
+B11,8,2,LAMBDA,Myd88,control,day0,Myd-lam-cc-0-4,34.19
+B12,8,3,LAMBDA,Myd88,control,day0,Myd-lam-cc-0-4,31.17
+C01,9,1,LAMBDA,DV-1,control,day5,Dv-lam-cc-5-1,23.74
+C02,9,2,LAMBDA,DV-1,control,day5,Dv-lam-cc-5-1,24.69
+C03,9,3,LAMBDA,DV-1,control,day5,Dv-lam-cc-5-1,24.69
+C04,10,1,LAMBDA,DV-1,control,day5,Dv-lam-cc-5-2,31.00
+C05,10,2,LAMBDA,DV-1,control,day5,Dv-lam-cc-5-2,31.11
+C06,10,3,LAMBDA,DV-1,control,day5,Dv-lam-cc-5-2,32.23
+C07,11,1,LAMBDA,DV-1,control,day5,Dv-lam-cc-5-3,31.11
+C08,11,2,LAMBDA,DV-1,control,day5,Dv-lam-cc-5-3,31.77
+C09,11,3,LAMBDA,DV-1,control,day5,Dv-lam-cc-5-3,31.75
+C10,12,1,LAMBDA,DV-1,control,day5,Dv-lam-cc-5-4,30.27
+C11,12,2,LAMBDA,DV-1,control,day5,Dv-lam-cc-5-4,31.29
+C12,12,3,LAMBDA,DV-1,control,day5,Dv-lam-cc-5-4,31.34
+D01,13,1,LAMBDA,Myd88,control,day5,Myd-lam-cc-5-1,32.87
+D02,13,2,LAMBDA,Myd88,control,day5,Myd-lam-cc-5-1,32.60
+D03,13,3,LAMBDA,Myd88,control,day5,Myd-lam-cc-5-1,30.39
+D04,14,1,LAMBDA,Myd88,control,day5,Myd-lam-cc-5-2,29.29
+D05,14,2,LAMBDA,Myd88,control,day5,Myd-lam-cc-5-2,31.56
+D06,14,3,LAMBDA,Myd88,control,day5,Myd-lam-cc-5-2,31.31
+D07,15,1,LAMBDA,Myd88,control,day5,Myd-lam-cc-5-3,31.48
+D08,15,2,LAMBDA,Myd88,control,day5,Myd-lam-cc-5-3,32.11
+D09,15,3,LAMBDA,Myd88,control,day5,Myd-lam-cc-5-3,31.05
+D10,16,1,LAMBDA,Myd88,control,day5,Myd-lam-cc-5-4,32.61
+D11,16,2,LAMBDA,Myd88,control,day5,Myd-lam-cc-5-4,32.74
+D12,16,3,LAMBDA,Myd88,control,day5,Myd-lam-cc-5-4,32.94
+E01,17,1,LAMBDA,DV-1,DiNV,day0,Dv-lam-D-0-1,31.35
+E02,17,2,LAMBDA,DV-1,DiNV,day0,Dv-lam-D-0-1,30.91
+E03,17,3,LAMBDA,DV-1,DiNV,day0,Dv-lam-D-0-1,32.43
+E04,18,1,LAMBDA,DV-1,DiNV,day0,Dv-lam-D-0-2,29.43
+E05,18,2,LAMBDA,DV-1,DiNV,day0,Dv-lam-D-0-2,29.50
+E06,18,3,LAMBDA,DV-1,DiNV,day0,Dv-lam-D-0-2,29.20
+E07,19,1,LAMBDA,DV-1,DiNV,day0,Dv-lam-D-0-3,31.28
+E08,19,2,LAMBDA,DV-1,DiNV,day0,Dv-lam-D-0-3,31.18
+E09,19,3,LAMBDA,DV-1,DiNV,day0,Dv-lam-D-0-3,30.45
+E10,20,1,LAMBDA,DV-1,DiNV,day0,Dv-lam-D-0-4,31.26
+E11,20,2,LAMBDA,DV-1,DiNV,day0,Dv-lam-D-0-4,30.93
+E12,20,3,LAMBDA,DV-1,DiNV,day0,Dv-lam-D-0-4,31.30
+F01,21,1,LAMBDA,Myd88,DiNV,day0,Myd-lam-D-0-1,30.96
+F02,21,2,LAMBDA,Myd88,DiNV,day0,Myd-lam-D-0-1,30.16
+F03,21,3,LAMBDA,Myd88,DiNV,day0,Myd-lam-D-0-1,31.26
+F04,22,1,LAMBDA,Myd88,DiNV,day0,Myd-lam-D-0-2,31.81
+F05,22,2,LAMBDA,Myd88,DiNV,day0,Myd-lam-D-0-2,30.73
+F06,22,3,LAMBDA,Myd88,DiNV,day0,Myd-lam-D-0-2,31.46
+F07,23,1,LAMBDA,Myd88,DiNV,day0,Myd-lam-D-0-3,34.32
+F08,23,2,LAMBDA,Myd88,DiNV,day0,Myd-lam-D-0-3,31.79
+F09,23,3,LAMBDA,Myd88,DiNV,day0,Myd-lam-D-0-3,31.68
+F10,24,1,LAMBDA,Myd88,DiNV,day0,Myd-lam-D-0-4,30.21
+F11,24,2,LAMBDA,Myd88,DiNV,day0,Myd-lam-D-0-4,30.31
+F12,24,3,LAMBDA,Myd88,DiNV,day0,Myd-lam-D-0-4,30.22
+G01,25,1,LAMBDA,DV-1,DiNV,day5,Dv-lam-D-5-1,30.71
+G02,25,2,LAMBDA,DV-1,DiNV,day5,Dv-lam-D-5-1,31.32
+G03,25,3,LAMBDA,DV-1,DiNV,day5,Dv-lam-D-5-1,31.60
+G04,26,1,LAMBDA,DV-1,DiNV,day5,Dv-lam-D-5-2,30.30
+G05,26,2,LAMBDA,DV-1,DiNV,day5,Dv-lam-D-5-2,30.70
+G06,26,3,LAMBDA,DV-1,DiNV,day5,Dv-lam-D-5-2,29.44
+G07,27,1,LAMBDA,DV-1,DiNV,day5,Dv-lam-D-5-3,32.58
+G08,27,2,LAMBDA,DV-1,DiNV,day5,Dv-lam-D-5-3,32.40
+G09,27,3,LAMBDA,DV-1,DiNV,day5,Dv-lam-D-5-3,32.28
+G10,28,1,LAMBDA,DV-1,DiNV,day5,Dv-lam-D-5-4,24.30
+G11,28,2,LAMBDA,DV-1,DiNV,day5,Dv-lam-D-5-4,24.38
+G12,28,3,LAMBDA,DV-1,DiNV,day5,Dv-lam-D-5-4,23.62
+H01,29,1,LAMBDA,Myd88,DiNV,day5,Myd-lam-D-5-1,31.85
+H02,29,2,LAMBDA,Myd88,DiNV,day5,Myd-lam-D-5-1,32.04
+H03,29,3,LAMBDA,Myd88,DiNV,day5,Myd-lam-D-5-1,30.96
+H04,30,1,LAMBDA,Myd88,DiNV,day5,Myd-lam-D-5-2,32.60
+H05,30,2,LAMBDA,Myd88,DiNV,day5,Myd-lam-D-5-2,32.73
+H06,30,3,LAMBDA,Myd88,DiNV,day5,Myd-lam-D-5-2,33.23
+H07,31,1,LAMBDA,Myd88,DiNV,day5,Myd-lam-D-5-3,32.15
+H08,31,2,LAMBDA,Myd88,DiNV,day5,Myd-lam-D-5-3,29.09
+H09,31,3,LAMBDA,Myd88,DiNV,day5,Myd-lam-D-5-3,32.15
+H10,32,1,LAMBDA,Myd88,DiNV,day5,Myd-lam-D-5-4,30.28
+H11,32,2,LAMBDA,Myd88,DiNV,day5,Myd-lam-D-5-4,29.40
+H12,32,3,LAMBDA,Myd88,DiNV,day5,Myd-lam-D-5-4,30.32

@@ -1,0 +1,193 @@
+well,plate,well code,tube number,treatment,dilution,dilution long,unique.name,replicate,primer,Cq
+A01,1,6 1ng,6,16Cq DiNV needle poke,1ng,1nanogram,6-1ng-TPI,1,TPI,23.42
+A02,1,6 1ng,6,16Cq DiNV needle poke,1ng,1nanogram,6-1ng-TPI,2,TPI,23.23
+A03,1,6 1ng,6,16Cq DiNV needle poke,1ng,1nanogram,6-1ng-TPI,3,TPI,23.15
+A04,1,6 0.1ng,6,16Cq DiNV needle poke,0.1ng,point1nanogram,6-0.1ng-TPI,1,TPI,26.43
+A05,1,6 0.1ng,6,16Cq DiNV needle poke,0.1ng,point1nanogram,6-0.1ng-TPI,2,TPI,26.47
+A06,1,6 0.1ng,6,16Cq DiNV needle poke,0.1ng,point1nanogram,6-0.1ng-TPI,3,TPI,26.59
+A07,1,6 0.01ng,6,16Cq DiNV needle poke,0.01ng,pointzero1nanogram,6-0.01ng-TPI,1,TPI,29.66
+A08,1,6 0.01ng,6,16Cq DiNV needle poke,0.01ng,pointzero1nanogram,6-0.01ng-TPI,2,TPI,30.26
+A09,1,6 0.01ng,6,16Cq DiNV needle poke,0.01ng,pointzero1nanogram,6-0.01ng-TPI,3,TPI,29.99
+A10,1,6 1:10,6,16Cq DiNV needle poke,1:10,1to10,6-1:10-TPI,1,TPI,22.65
+A11,1,6 1:10,6,16Cq DiNV needle poke,1:10,1to10,6-1:10-TPI,2,TPI,22.79
+A12,1,6 1:10,6,16Cq DiNV needle poke,1:10,1to10,6-1:10-TPI,3,TPI,22.87
+B01,1,6 1:100,6,16Cq DiNV needle poke,0.111111111,1to100,6-1:100-TPI,1,TPI,25.77
+B02,1,6 1:100,6,16Cq DiNV needle poke,0.111111111,1to100,6-1:100-TPI,2,TPI,25.93
+B03,1,6 1:100,6,16Cq DiNV needle poke,0.111111111,1to100,6-1:100-TPI,3,TPI,25.88
+B04,1,8 1ng,8,16Cq DiNV needle poke,1ng,1nanogram,8-1ng-TPI,1,TPI,23.75
+B05,1,8 1ng,8,16Cq DiNV needle poke,1ng,1nanogram,8-1ng-TPI,2,TPI,23.69
+B06,1,8 1ng,8,16Cq DiNV needle poke,1ng,1nanogram,8-1ng-TPI,3,TPI,23.89
+B07,1,8 0.1ng,8,16Cq DiNV needle poke,0.1ng,point1nanogram,8-0.1ng-TPI,1,TPI,27
+B08,1,8 0.1ng,8,16Cq DiNV needle poke,0.1ng,point1nanogram,8-0.1ng-TPI,2,TPI,26.94
+B09,1,8 0.1ng,8,16Cq DiNV needle poke,0.1ng,point1nanogram,8-0.1ng-TPI,3,TPI,26.63
+B10,1,8 0.01ng,8,16Cq DiNV needle poke,0.01ng,pointzero1nanogram,8-0.01ng-TPI,1,TPI,29.87
+B11,1,8 0.01ng,8,16Cq DiNV needle poke,0.01ng,pointzero1nanogram,8-0.01ng-TPI,2,TPI,29.5
+B12,1,8 0.01ng,8,16Cq DiNV needle poke,0.01ng,pointzero1nanogram,8-0.01ng-TPI,3,TPI,29.65
+C01,1,8 1:10,8,16Cq DiNV needle poke,1:10,1to10,8-1:10-TPI,1,TPI,22.19
+C02,1,8 1:10,8,16Cq DiNV needle poke,1:10,1to10,8-1:10-TPI,2,TPI,22.12
+C03,1,8 1:10,8,16Cq DiNV needle poke,1:10,1to10,8-1:10-TPI,3,TPI,22.31
+C04,1,8 1:100,8,16Cq DiNV needle poke,0.111111111,1to100,8-1:100-TPI,1,TPI,25.23
+C05,1,8 1:100,8,16Cq DiNV needle poke,0.111111111,1to100,8-1:100-TPI,2,TPI,25.08
+C06,1,8 1:100,8,16Cq DiNV needle poke,0.111111111,1to100,8-1:100-TPI,3,TPI,25.28
+C07,1,14 1ng,14,16Cq DiNV needle poke,1ng,1nanogram,14-1ng-TPI,1,TPI,23.5
+C08,1,14 1ng,14,16Cq DiNV needle poke,1ng,1nanogram,14-1ng-TPI,2,TPI,23.56
+C09,1,14 1ng,14,16Cq DiNV needle poke,1ng,1nanogram,14-1ng-TPI,3,TPI,23.62
+C10,1,14 0.1ng,14,16Cq DiNV needle poke,0.1ng,point1nanogram,14-0.1ng-TPI,1,TPI,26.49
+C11,1,14 0.1ng,14,16Cq DiNV needle poke,0.1ng,point1nanogram,14-0.1ng-TPI,2,TPI,26.48
+C12,1,14 0.1ng,14,16Cq DiNV needle poke,0.1ng,point1nanogram,14-0.1ng-TPI,3,TPI,26.68
+D01,1,14 0.01ng,14,16Cq DiNV needle poke,0.01ng,pointzero1nanogram,14-0.01ng-TPI,1,TPI,29.46
+D02,1,14 0.01ng,14,16Cq DiNV needle poke,0.01ng,pointzero1nanogram,14-0.01ng-TPI,2,TPI,29.37
+D03,1,14 0.01ng,14,16Cq DiNV needle poke,0.01ng,pointzero1nanogram,14-0.01ng-TPI,3,TPI,29.44
+D04,1,14 1:10,14,16Cq DiNV needle poke,1:10,1to10,14-1:10-TPI,1,TPI,22.22
+D05,1,14 1:10,14,16Cq DiNV needle poke,1:10,1to10,14-1:10-TPI,2,TPI,22.17
+D06,1,14 1:10,14,16Cq DiNV needle poke,1:10,1to10,14-1:10-TPI,3,TPI,22.22
+D07,1,14 1:100,14,16Cq DiNV needle poke,0.111111111,1to100,14-1:100-TPI,1,TPI,25.35
+D08,1,14 1:100,14,16Cq DiNV needle poke,0.111111111,1to100,14-1:100-TPI,2,TPI,25.41
+D09,1,14 1:100,14,16Cq DiNV needle poke,0.111111111,1to100,14-1:100-TPI,3,TPI,25.22
+D10,1,17 1ng,17,16Cq DiNV injection,1ng,1nanogram,17-1ng-TPI,1,TPI,22.45
+D11,1,17 1ng,17,16Cq DiNV injection,1ng,1nanogram,17-1ng-TPI,2,TPI,22.59
+D12,1,17 1ng,17,16Cq DiNV injection,1ng,1nanogram,17-1ng-TPI,3,TPI,22.74
+E01,1,17 0.1ng,17,16Cq DiNV injection,0.1ng,point1nanogram,17-0.1ng-TPI,1,TPI,26.16
+E02,1,17 0.1ng,17,16Cq DiNV injection,0.1ng,point1nanogram,17-0.1ng-TPI,2,TPI,26
+E03,1,17 0.1ng,17,16Cq DiNV injection,0.1ng,point1nanogram,17-0.1ng-TPI,3,TPI,26.13
+E04,1,17 0.01ng,17,16Cq DiNV injection,0.01ng,pointzero1nanogram,17-0.01ng-TPI,1,TPI,29.28
+E05,1,17 0.01ng,17,16Cq DiNV injection,0.01ng,pointzero1nanogram,17-0.01ng-TPI,2,TPI,29.43
+E06,1,17 0.01ng,17,16Cq DiNV injection,0.01ng,pointzero1nanogram,17-0.01ng-TPI,3,TPI,29.3
+E07,1,17 1:10,17,16Cq DiNV injection,1:10,1to10,17-1:10-TPI,1,TPI,22.41
+E08,1,17 1:10,17,16Cq DiNV injection,1:10,1to10,17-1:10-TPI,2,TPI,22.39
+E09,1,17 1:10,17,16Cq DiNV injection,1:10,1to10,17-1:10-TPI,3,TPI,22.42
+E10,1,17 1:100,17,16Cq DiNV injection,0.111111111,1to100,17-1:100-TPI,1,TPI,25.76
+E11,1,17 1:100,17,16Cq DiNV injection,0.111111111,1to100,17-1:100-TPI,2,TPI,25.89
+E12,1,17 1:100,17,16Cq DiNV injection,0.111111111,1to100,17-1:100-TPI,3,TPI,25.97
+F01,1,22 1ng,22,16Cq DiNV injection,1ng,1nanogram,22-1ng-TPI,1,TPI,23.4
+F02,1,22 1ng,22,16Cq DiNV injection,1ng,1nanogram,22-1ng-TPI,2,TPI,23.32
+F03,1,22 1ng,22,16Cq DiNV injection,1ng,1nanogram,22-1ng-TPI,3,TPI,23.23
+F04,1,22 0.1ng,22,16Cq DiNV injection,0.1ng,point1nanogram,22-0.1ng-TPI,1,TPI,26.48
+F05,1,22 0.1ng,22,16Cq DiNV injection,0.1ng,point1nanogram,22-0.1ng-TPI,2,TPI,26.41
+F06,1,22 0.1ng,22,16Cq DiNV injection,0.1ng,point1nanogram,22-0.1ng-TPI,3,TPI,26.48
+F07,1,22 0.01ng,22,16Cq DiNV injection,0.01ng,pointzero1nanogram,22-0.01ng-TPI,1,TPI,29.99
+F08,1,22 0.01ng,22,16Cq DiNV injection,0.01ng,pointzero1nanogram,22-0.01ng-TPI,2,TPI,29.89
+F09,1,22 0.01ng,22,16Cq DiNV injection,0.01ng,pointzero1nanogram,22-0.01ng-TPI,3,TPI,29.71
+F10,1,22 1:10,22,16Cq DiNV injection,1:10,1to10,22-1:10-TPI,1,TPI,22.24
+F11,1,22 1:10,22,16Cq DiNV injection,1:10,1to10,22-1:10-TPI,2,TPI,22.23
+F12,1,22 1:10,22,16Cq DiNV injection,1:10,1to10,22-1:10-TPI,3,TPI,22.29
+G01,1,22 1:100,22,16Cq DiNV injection,0.111111111,1to100,22-1:100-TPI,1,TPI,25.32
+G02,1,22 1:100,22,16Cq DiNV injection,0.111111111,1to100,22-1:100-TPI,2,TPI,25.34
+G03,1,22 1:100,22,16Cq DiNV injection,0.111111111,1to100,22-1:100-TPI,3,TPI,25.27
+G04,1,24 1ng,24,16Cq DiNV injection,1ng,1nanogram,24-1ng-TPI,1,TPI,23.5
+G05,1,24 1ng,24,16Cq DiNV injection,1ng,1nanogram,24-1ng-TPI,2,TPI,23.47
+G06,1,24 1ng,24,16Cq DiNV injection,1ng,1nanogram,24-1ng-TPI,3,TPI,23.8
+G07,1,24 0.1ng,24,16Cq DiNV injection,0.1ng,point1nanogram,24-0.1ng-TPI,1,TPI,27.03
+G08,1,24 0.1ng,24,16Cq DiNV injection,0.1ng,point1nanogram,24-0.1ng-TPI,2,TPI,26.64
+G09,1,24 0.1ng,24,16Cq DiNV injection,0.1ng,point1nanogram,24-0.1ng-TPI,3,TPI,26.51
+G10,1,24 0.01ng,24,16Cq DiNV injection,0.01ng,pointzero1nanogram,24-0.01ng-TPI,1,TPI,29.79
+G11,1,24 0.01ng,24,16Cq DiNV injection,0.01ng,pointzero1nanogram,24-0.01ng-TPI,2,TPI,29.58
+G12,1,24 0.01ng,24,16Cq DiNV injection,0.01ng,pointzero1nanogram,24-0.01ng-TPI,3,TPI,29.71
+H01,1,24 1:10,24,16Cq DiNV injection,1:10,1to10,24-1:10-TPI,1,TPI,22.24
+H02,1,24 1:10,24,16Cq DiNV injection,1:10,1to10,24-1:10-TPI,2,TPI,22.12
+H03,1,24 1:10,24,16Cq DiNV injection,1:10,1to10,24-1:10-TPI,3,TPI,22.15
+H04,1,24 1:100,24,16Cq DiNV injection,0.111111111,1to100,24-1:100-TPI,1,TPI,25.02
+H05,1,24 1:100,24,16Cq DiNV injection,0.111111111,1to100,24-1:100-TPI,2,TPI,25.01
+H06,1,24 1:100,24,16Cq DiNV injection,0.111111111,1to100,24-1:100-TPI,3,TPI,25.02
+H07,1,no temp,water,none,NA,NA,water-TPI,1,TPI,40
+H08,1,no temp,water,none,NA,NA,water-TPI,2,TPI,34.78
+H09,1,no temp,water,none,NA,NA,water-TPI,3,TPI,35.22
+H10,1,stock 8 1ng,s8,none,1ng,1nanogram,stock8-TPI,1,TPI,22.61
+H11,1,stock 8 1ng,s8,none,1ng,1nanogram,stock8-TPI,2,TPI,22.8
+H12,1,stock 8 1ng,s8,none,1ng,1nanogram,stock8-TPI,3,TPI,23.07
+A01,2,6 1ng,6,16Cq DiNV needle poke,1ng,1nanogram,6-1ng-pif,1,PIF3,40
+A02,2,6 1ng,6,16Cq DiNV needle poke,1ng,1nanogram,6-1ng-pif,2,PIF3,34.47
+A03,2,6 1ng,6,16Cq DiNV needle poke,1ng,1nanogram,6-1ng-pif,3,PIF3,35.42
+A04,2,6 0.1ng,6,16Cq DiNV needle poke,0.1ng,point1nanogram,6-0.1ng-pif,1,PIF3,40
+A05,2,6 0.1ng,6,16Cq DiNV needle poke,0.1ng,point1nanogram,6-0.1ng-pif,2,PIF3,40
+A06,2,6 0.1ng,6,16Cq DiNV needle poke,0.1ng,point1nanogram,6-0.1ng-pif,3,PIF3,39.78
+A07,2,6 0.01ng,6,16Cq DiNV needle poke,0.01ng,pointzero1nanogram,6-0.01ng-pif,1,PIF3,34.42
+A08,2,6 0.01ng,6,16Cq DiNV needle poke,0.01ng,pointzero1nanogram,6-0.01ng-pif,2,PIF3,40
+A09,2,6 0.01ng,6,16Cq DiNV needle poke,0.01ng,pointzero1nanogram,6-0.01ng-pif,3,PIF3,40
+A10,2,6 1:10,6,16Cq DiNV needle poke,1:10,1to10,6-1:10-pif,1,PIF3,40
+A11,2,6 1:10,6,16Cq DiNV needle poke,1:10,1to10,6-1:10-pif,2,PIF3,39.35
+A12,2,6 1:10,6,16Cq DiNV needle poke,1:10,1to10,6-1:10-pif,3,PIF3,40
+B01,2,6 1:100,6,16Cq DiNV needle poke,0.111111111,1to100,6-1:100-pif,1,PIF3,40
+B02,2,6 1:100,6,16Cq DiNV needle poke,0.111111111,1to100,6-1:100-pif,2,PIF3,40
+B03,2,6 1:100,6,16Cq DiNV needle poke,0.111111111,1to100,6-1:100-pif,3,PIF3,36.78
+B04,2,8 1ng,8,16Cq DiNV needle poke,1ng,1nanogram,8-1ng-pif,1,PIF3,35.76
+B05,2,8 1ng,8,16Cq DiNV needle poke,1ng,1nanogram,8-1ng-pif,2,PIF3,33.92
+B06,2,8 1ng,8,16Cq DiNV needle poke,1ng,1nanogram,8-1ng-pif,3,PIF3,34.13
+B07,2,8 0.1ng,8,16Cq DiNV needle poke,0.1ng,point1nanogram,8-0.1ng-pif,1,PIF3,37.22
+B08,2,8 0.1ng,8,16Cq DiNV needle poke,0.1ng,point1nanogram,8-0.1ng-pif,2,PIF3,35.03
+B09,2,8 0.1ng,8,16Cq DiNV needle poke,0.1ng,point1nanogram,8-0.1ng-pif,3,PIF3,37.21
+B10,2,8 0.01ng,8,16Cq DiNV needle poke,0.01ng,pointzero1nanogram,8-0.01ng-pif,1,PIF3,40
+B11,2,8 0.01ng,8,16Cq DiNV needle poke,0.01ng,pointzero1nanogram,8-0.01ng-pif,2,PIF3,36.45
+B12,2,8 0.01ng,8,16Cq DiNV needle poke,0.01ng,pointzero1nanogram,8-0.01ng-pif,3,PIF3,40
+C01,2,8 1:10,8,16Cq DiNV needle poke,1:10,1to10,8-1:10-pif,1,PIF3,35.35
+C02,2,8 1:10,8,16Cq DiNV needle poke,1:10,1to10,8-1:10-pif,2,PIF3,33.92
+C03,2,8 1:10,8,16Cq DiNV needle poke,1:10,1to10,8-1:10-pif,3,PIF3,33.59
+C04,2,8 1:100,8,16Cq DiNV needle poke,0.111111111,1to100,8-1:100-pif,1,PIF3,35.27
+C05,2,8 1:100,8,16Cq DiNV needle poke,0.111111111,1to100,8-1:100-pif,2,PIF3,36.57
+C06,2,8 1:100,8,16Cq DiNV needle poke,0.111111111,1to100,8-1:100-pif,3,PIF3,36.23
+C07,2,14 1ng,14,16Cq DiNV needle poke,1ng,1nanogram,14-1ng-pif,1,PIF3,33.24
+C08,2,14 1ng,14,16Cq DiNV needle poke,1ng,1nanogram,14-1ng-pif,2,PIF3,32.97
+C09,2,14 1ng,14,16Cq DiNV needle poke,1ng,1nanogram,14-1ng-pif,3,PIF3,33.17
+C10,2,14 0.1ng,14,16Cq DiNV needle poke,0.1ng,point1nanogram,14-0.1ng-pif,1,PIF3,34.31
+C11,2,14 0.1ng,14,16Cq DiNV needle poke,0.1ng,point1nanogram,14-0.1ng-pif,2,PIF3,33.66
+C12,2,14 0.1ng,14,16Cq DiNV needle poke,0.1ng,point1nanogram,14-0.1ng-pif,3,PIF3,35.36
+D01,2,14 0.01ng,14,16Cq DiNV needle poke,0.01ng,pointzero1nanogram,14-0.01ng-pif,1,PIF3,40
+D02,2,14 0.01ng,14,16Cq DiNV needle poke,0.01ng,pointzero1nanogram,14-0.01ng-pif,2,PIF3,40
+D03,2,14 0.01ng,14,16Cq DiNV needle poke,0.01ng,pointzero1nanogram,14-0.01ng-pif,3,PIF3,40
+D04,2,14 1:10,14,16Cq DiNV needle poke,1:10,1to10,14-1:10-pif,1,PIF3,30.43
+D05,2,14 1:10,14,16Cq DiNV needle poke,1:10,1to10,14-1:10-pif,2,PIF3,31.9
+D06,2,14 1:10,14,16Cq DiNV needle poke,1:10,1to10,14-1:10-pif,3,PIF3,32.65
+D07,2,14 1:100,14,16Cq DiNV needle poke,0.111111111,1to100,14-1:100-pif,1,PIF3,33.15
+D08,2,14 1:100,14,16Cq DiNV needle poke,0.111111111,1to100,14-1:100-pif,2,PIF3,34.23
+D09,2,14 1:100,14,16Cq DiNV needle poke,0.111111111,1to100,14-1:100-pif,3,PIF3,34.19
+D10,2,17 1ng,17,16Cq DiNV injection,1ng,1nanogram,17-1ng-pif,1,PIF3,29.88
+D11,2,17 1ng,17,16Cq DiNV injection,1ng,1nanogram,17-1ng-pif,2,PIF3,30.03
+D12,2,17 1ng,17,16Cq DiNV injection,1ng,1nanogram,17-1ng-pif,3,PIF3,29.56
+E01,2,17 0.1ng,17,16Cq DiNV injection,0.1ng,point1nanogram,17-0.1ng-pif,1,PIF3,34.32
+E02,2,17 0.1ng,17,16Cq DiNV injection,0.1ng,point1nanogram,17-0.1ng-pif,2,PIF3,40
+E03,2,17 0.1ng,17,16Cq DiNV injection,0.1ng,point1nanogram,17-0.1ng-pif,3,PIF3,32.36
+E04,2,17 0.01ng,17,16Cq DiNV injection,0.01ng,pointzero1nanogram,17-0.01ng-pif,1,PIF3,40
+E05,2,17 0.01ng,17,16Cq DiNV injection,0.01ng,pointzero1nanogram,17-0.01ng-pif,2,PIF3,40
+E06,2,17 0.01ng,17,16Cq DiNV injection,0.01ng,pointzero1nanogram,17-0.01ng-pif,3,PIF3,40
+E07,2,17 1:10,17,16Cq DiNV injection,1:10,1to10,17-1:10-pif,1,PIF3,29.64
+E08,2,17 1:10,17,16Cq DiNV injection,1:10,1to10,17-1:10-pif,2,PIF3,29.6
+E09,2,17 1:10,17,16Cq DiNV injection,1:10,1to10,17-1:10-pif,3,PIF3,30.23
+E10,2,17 1:100,17,16Cq DiNV injection,0.111111111,1to100,17-1:100-pif,1,PIF3,31.54
+E11,2,17 1:100,17,16Cq DiNV injection,0.111111111,1to100,17-1:100-pif,2,PIF3,34.45
+E12,2,17 1:100,17,16Cq DiNV injection,0.111111111,1to100,17-1:100-pif,3,PIF3,33.23
+F01,2,22 1ng,22,16Cq DiNV injection,1ng,1nanogram,22-1ng-pif,1,PIF3,30.86
+F02,2,22 1ng,22,16Cq DiNV injection,1ng,1nanogram,22-1ng-pif,2,PIF3,30.54
+F03,2,22 1ng,22,16Cq DiNV injection,1ng,1nanogram,22-1ng-pif,3,PIF3,29.92
+F04,2,22 0.1ng,22,16Cq DiNV injection,0.1ng,point1nanogram,22-0.1ng-pif,1,PIF3,33.05
+F05,2,22 0.1ng,22,16Cq DiNV injection,0.1ng,point1nanogram,22-0.1ng-pif,2,PIF3,33.08
+F06,2,22 0.1ng,22,16Cq DiNV injection,0.1ng,point1nanogram,22-0.1ng-pif,3,PIF3,40
+F07,2,22 0.01ng,22,16Cq DiNV injection,0.01ng,pointzero1nanogram,22-0.01ng-pif,1,PIF3,35.75
+F08,2,22 0.01ng,22,16Cq DiNV injection,0.01ng,pointzero1nanogram,22-0.01ng-pif,2,PIF3,39.38
+F09,2,22 0.01ng,22,16Cq DiNV injection,0.01ng,pointzero1nanogram,22-0.01ng-pif,3,PIF3,40
+F10,2,22 1:10,22,16Cq DiNV injection,1:10,1to10,22-1:10-pif,1,PIF3,29.32
+F11,2,22 1:10,22,16Cq DiNV injection,1:10,1to10,22-1:10-pif,2,PIF3,29.91
+F12,2,22 1:10,22,16Cq DiNV injection,1:10,1to10,22-1:10-pif,3,PIF3,29.69
+G01,2,22 1:100,22,16Cq DiNV injection,0.111111111,1to100,22-1:100-pif,1,PIF3,34.07
+G02,2,22 1:100,22,16Cq DiNV injection,0.111111111,1to100,22-1:100-pif,2,PIF3,32.72
+G03,2,22 1:100,22,16Cq DiNV injection,0.111111111,1to100,22-1:100-pif,3,PIF3,32.43
+G04,2,24 1ng,24,16Cq DiNV injection,1ng,1nanogram,24-1ng-pif,1,PIF3,31.69
+G05,2,24 1ng,24,16Cq DiNV injection,1ng,1nanogram,24-1ng-pif,2,PIF3,31.35
+G06,2,24 1ng,24,16Cq DiNV injection,1ng,1nanogram,24-1ng-pif,3,PIF3,31.24
+G07,2,24 0.1ng,24,16Cq DiNV injection,0.1ng,point1nanogram,24-0.1ng-pif,1,PIF3,33.55
+G08,2,24 0.1ng,24,16Cq DiNV injection,0.1ng,point1nanogram,24-0.1ng-pif,2,PIF3,34.16
+G09,2,24 0.1ng,24,16Cq DiNV injection,0.1ng,point1nanogram,24-0.1ng-pif,3,PIF3,34.85
+G10,2,24 0.01ng,24,16Cq DiNV injection,0.01ng,pointzero1nanogram,24-0.01ng-pif,1,PIF3,40
+G11,2,24 0.01ng,24,16Cq DiNV injection,0.01ng,pointzero1nanogram,24-0.01ng-pif,2,PIF3,34.4
+G12,2,24 0.01ng,24,16Cq DiNV injection,0.01ng,pointzero1nanogram,24-0.01ng-pif,3,PIF3,40
+H01,2,24 1:10,24,16Cq DiNV injection,1:10,1to10,24-1:10-pif,1,PIF3,30.07
+H02,2,24 1:10,24,16Cq DiNV injection,1:10,1to10,24-1:10-pif,2,PIF3,29.64
+H03,2,24 1:10,24,16Cq DiNV injection,1:10,1to10,24-1:10-pif,3,PIF3,29.59
+H04,2,24 1:100,24,16Cq DiNV injection,0.111111111,1to100,24-1:100-pif,1,PIF3,32.1
+H05,2,24 1:100,24,16Cq DiNV injection,0.111111111,1to100,24-1:100-pif,2,PIF3,33.35
+H06,2,24 1:100,24,16Cq DiNV injection,0.111111111,1to100,24-1:100-pif,3,PIF3,31.34
+H07,2,no temp,water,none,NA,NA,water-pif,1,PIF3,40
+H08,2,no temp,water,none,NA,NA,water-pif,2,PIF3,40
+H09,2,no temp,water,none,NA,NA,water-pif,3,PIF3,40
+H10,2,stock 8 1ng,s8,none,1ng,1nanogram,stock8-pif,1,PIF3,36.76
+H11,2,stock 8 1ng,s8,none,1ng,1nanogram,stock8-pif,2,PIF3,36.82
+H12,2,stock 8 1ng,s8,none,1ng,1nanogram,stock8-pif,3,PIF3,36.56
